@@ -4,6 +4,7 @@ let input = fs.readFileSync('./dev/stdin').toString().trim().split('\n')
 let t = Number(input[0])
 let arr = []
 let yak = 0
+let answer = ''
 for (i=1; i<=t; i++) {
   arr.push(input[i].split(' ').map(Number))
 }
@@ -16,5 +17,9 @@ for (i=0; i<t; i++) {
     if (min % j === 0 && max % j === 0) {
       yak = j}
   }
-  console.log(a * b / yak)
+  answer += a * b / yak
+  if (i < t-1) {
+    answer += '\n'
+  }
 }
+console.log(answer)
