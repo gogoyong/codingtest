@@ -1,4 +1,4 @@
 function solution(array) {
-    const max = array.reduce((a,b) => Math.max(a,b))
+    const max = Math.max(...array)
     return [max, array.indexOf(max)];
 }
